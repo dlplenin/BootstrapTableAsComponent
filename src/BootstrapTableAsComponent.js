@@ -8,9 +8,8 @@ export class BootstrapTableAsComponent extends Component{
   }
 
   render(){
-    let tableHeaderColumns = this.props.children[2].props.children.map((header, index) => {
+    let tableHeaderColumns = this.props.children.props.children.map((header, index) => {
       let dataField = header.props.dataField;
-      console.log('dataField: ', dataField);
 
       return <TableHeaderColumn
         headerText={header.props.headerText}
@@ -24,7 +23,7 @@ export class BootstrapTableAsComponent extends Component{
     
     return(
       <BootstrapTable
-        data={this.props.children[1]}
+        data={this.props.data}
         strictSearch={true}
         search multiColumnSearch pagination
         striped hover>
